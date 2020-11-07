@@ -19,22 +19,22 @@ app.config['upload_Folder'] = 'D:/Trilogy/Homework/final-project/dogImages/test/
 model = Xception(weights='imagenet', include_top=True)
 print('Model Loaded')
 #setup file read from local
-def local_files():
-    file_glob = list(sorted(glob.glob('dogImages/test/*.jpg')))[-20:]
-    pred_list = []
-    for img_path in file_glob:
-        img = image.load_img(file_glob, target_size=(299,299))
-        x = image.img_to_array(img)
-        x = np.expand_dims(x, axis=0)
-        x = preprocess_input(x)
+# def local_files():
+#     file_glob = list(sorted(glob.glob('dogImages/test/*.jpg')))[-20:]
+#     pred_list = []
+#     for img_path in file_glob:
+#         img = image.load_img(file_glob, target_size=(299,299))
+#         x = image.img_to_array(img)
+#         x = np.expand_dims(x, axis=0)
+#         x = preprocess_input(x)
 
-        #prediction load
-        prediction_3 = model.predict(x)
+#         #prediction load
+#         prediction_3 = model.predict(x)
 
-        #decode tuples in to list w/ predict %
-        prediction_outcome = decode_predictions(prediction_3, top=3)
-        pred_list.append(prediction_outcome)
-    return pred_list
+#         #decode tuples in to list w/ predict %
+#         prediction_outcome = decode_predictions(prediction_3, top=3)
+#         pred_list.append(prediction_outcome)
+#     return pred_list
 
 
 #setup file upload function
@@ -79,7 +79,10 @@ def prediction():
         #decode tuples in to list w/ predict %
         prediction_outcome = decode_predictions(prediction, top=4)
 
+        #can use prediction in html as variable
         return render_template('index.html', prediction = prediction_outcome, labels = file_glob)
 
 if __name__ == "__main__":
     app.run(debug=True)
+
+    #use_anonymous = true (function to allow access of file)
