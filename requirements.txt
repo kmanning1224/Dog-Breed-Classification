@@ -107,10 +107,10 @@ pywin32==228
 pywinpty==0.5.7
 PyYAML==5.3.1
 pyzmq==19.0.2
-requests @ file:///tmp/build/80754af9/requests_1592841827918/work
+requests==2.24.0
 requests-oauthlib==1.3.0
 rsa==4.0
-scikit-learn @ file:///C:/ci/scikit-learn_1592853528256/work
+scikit-learn==0.23.1
 scipy==1.4.1
 seaborn==0.11.0
 Send2Trash==1.5.0
@@ -124,7 +124,7 @@ tensorflow-estimator==2.1.0
 termcolor==1.1.0
 terminado==0.9.1
 testpath==0.4.4
-threadpoolctl @ file:///tmp/tmp9twdgx9k/threadpoolctl-2.1.0-py3-none-any.whl
+threadpoolctl==2.1.0
 toml==0.10.1
 tornado==6.0.4
 traitlets==4.3.3
