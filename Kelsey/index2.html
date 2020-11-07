@@ -9,8 +9,9 @@
 <body>
   <div class="galleryContainer">
     <div class="slideShowContainer">
-      <div class="leftArrow"><span class="arrow arrowLeft"></span></div>
-      <div class="rightArrow"><span class="arrow arrowRight"></span></div>
+      <div id="playPauseBtn" onclick="playPauseSlides()"></div>
+      <div class="leftArrow" onclick="plusSlides(-1)"><span class="arrow arrowLeft"></span></div>
+      <div class="rightArrow" onclick="plusSlides(1)"><span class="arrow arrowRight"></span></div>
       <div class="imageHolder">
         <img src ="../Images/american-bulldog.jpg" width="400" height="300">
       </div>
@@ -72,6 +73,7 @@
         <img src ="../Images/weimaraner.jpg" width="400" height="300">
       </div>
     </div>
+    <div id="dotsContainer"></div>
   </div>
 <script src="myScript.js"></script>
 </body>
