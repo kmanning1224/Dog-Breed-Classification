@@ -6,7 +6,7 @@ from keras.preprocessing import image
 from keras.preprocessing.image import img_to_array
 from keras.applications.xception import (
     Xception, preprocess_input, decode_predictions)
-import tensorflow as tf
+# import tensorflow as tf
 from flask import Flask, request, redirect, url_for, jsonify, render_template, abort
 import glob
 import pandas as pd 
