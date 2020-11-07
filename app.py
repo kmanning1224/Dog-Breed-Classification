@@ -65,7 +65,7 @@ def prediction():
         tb._SYMBOLIC_SCOPE.value = True
 
         #build ML params
-        file_glob = list(sorted(glob.glob('dogImages/test/*.jpg')))[-20:]
+        file_glob = list(sorted(glob.glob('Uploads/*.jpg')))[-20:]
         file_path = file_import(request)
         #xception image preprocess
         img = image.load_img(file_path, target_size=(299,299))
@@ -77,7 +77,7 @@ def prediction():
         prediction = model.predict(x)
 
         #decode tuples in to list w/ predict %
-        prediction_outcome = decode_predictions(prediction, top=5)
+        prediction_outcome = decode_predictions(prediction, top=4)
 
         return render_template('index.html', prediction = prediction_outcome, labels = file_glob)
 
