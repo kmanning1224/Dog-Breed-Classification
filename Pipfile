@@ -74,11 +74,11 @@ MarkupSafe = "==1.1.1"
 PyYAML = "==5.3.1"
 SQLAlchemy = "==1.3.19"
 Unidecode = "==1.1.1"
+tensorflow = "==2.1.0"
+keras = "==2.3.1"
 Werkzeug = "==1.0.1"
 gunicorn = "*"
-tensorflow = "*"
-keras = "*"
-glob
+
 
 [requires]
 python_version = "3.8"

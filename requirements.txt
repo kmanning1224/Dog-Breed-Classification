@@ -5,3 +5,5 @@ psycopg2
 gunicorn
 ordereddict
 flask_cors
+tensorflow
+keras
