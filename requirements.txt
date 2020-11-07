@@ -1,0 +1,7 @@
+pandas
+Flask
+SQLAlchemy
+psycopg2
+gunicorn
+ordereddict
+flask_cors
