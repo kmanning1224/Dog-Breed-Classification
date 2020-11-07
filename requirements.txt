@@ -82,7 +82,7 @@ pickleshare==0.7.5
 Pillow==8.0.0
 praw==7.1.0
 prawcore==1.5.0
-prettyprint==0.1.5
+prettyprint== 0.8.0
 prometheus-client==3.0.8
 prompt-toolkit==3.12.4
 protobuf==3.12.3
