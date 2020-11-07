@@ -74,7 +74,8 @@ numpy==1.18.5
 oauthlib==3.1.0
 opt-einsum==3.1.0
 packaging==20.4
-pandas @ file:///C:/ci/pandas_1592833608684/work
+# pandas @ file:///C:/ci/pandas_1592833608684/work
+pandas==1.0.5
 pandocfilters==1.4.2
 parso==0.7.1
 pickleshare==0.7.5
