@@ -84,7 +84,7 @@ praw==7.1.0
 prawcore==1.5.0
 prettyprint==0.1.5
 prometheus-client==0.8.0
-prompt-toolkit==3.0.8
+prompt-toolkit==3.12.4
 protobuf==3.12.3
 psycopg2==2.8.6
 py4j==0.10.7
