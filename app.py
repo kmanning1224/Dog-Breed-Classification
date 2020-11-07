@@ -79,7 +79,10 @@ def prediction():
         #decode tuples in to list w/ predict %
         prediction_outcome = decode_predictions(prediction, top=4)
 
+        #can use prediction in html as variable
         return render_template('index.html', prediction = prediction_outcome, labels = file_glob)
 
 if __name__ == "__main__":
     app.run(debug=True)
+
+    #use_anonymous = true (function to allow access of file)
