@@ -51,7 +51,6 @@ def prepare_model(image_path, model):
 
     # predict
     predict = model.predict(x)
-    model.save('./model/xception.h5')
     # return the processed plot
     return predict
 
