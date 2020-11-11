@@ -132,7 +132,8 @@ def result1():
     results = DataResult1()
     return results
     
-@app.route('/plotfunc')
+@app.route('/plotfunc', methods=['GET','POST'])
+
 def create_plot(filelocal):
     print(filelocal)
     
