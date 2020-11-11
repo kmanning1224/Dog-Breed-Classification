@@ -133,12 +133,12 @@ def result1():
     return results
     
 @app.route('/plotfunc', methods=['GET','POST'])
-def create_plot2(filelocal):
+def create_plot2():
     if request.method == 'POST':
     
         files2 = getfile(request)
         print(files2)
-        preds = prepare_model(filesave2, model)
+        preds = prepare_model(files2, model)
 
         pclass = decode_predictions(preds, top=4)
         #test prediction
