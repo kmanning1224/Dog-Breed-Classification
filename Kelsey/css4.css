@@ -222,3 +222,27 @@ body {
 #radio20:checked ~ .navigation-auto .auto-btn20{
     background: #40D3DC;
 }
+
+.wrapper {
+    position: relative;
+    margin-top: 1000px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 5px;
+    
+}
+img {
+    width: 100%;
+    border-radius: 20px;
+    cursor: pointer;
+    -webkit-transition: 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+    -moz-transition: 0.3s ease-in-out, -moz-transform 0.3s ease-in-out;
+    transition: 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+img:hover {
+    transform: scale(1.05);
+}
+
+
+
+
