@@ -13,12 +13,14 @@ body {
     height: 600px; 
     border-radius: 10px; 
     overflow: hidden;
+    position: center;
 }
 
 .slides {
     width: 500%;
     height: 500px; 
     display: flex;
+    position: center;
 }
 
 .slides input {
@@ -28,11 +30,13 @@ body {
 .slide {
     width: 20%;
     transition: 2s;
+    position: relative;
 }
 
 .slide img {
     width: 800px; 
     height: 500px;
+    position: relative;
 }
 
 /*css for manual slide navigation*/
@@ -242,6 +246,12 @@ img {
 img:hover {
     transform: scale(1.05);
 }
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+  }
 
 
 
