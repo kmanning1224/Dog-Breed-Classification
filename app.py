@@ -1,6 +1,6 @@
 import os
 import numpy as np
-from werkzeug.utils import secure_filename
+from werkzeug.utils import secure_filename 
 # import keras.backend.tensorflow_backend as tb
 # tb._SYMBOLIC_SCOPE.value = True
 from tensorflow.keras.preprocessing import image
@@ -131,6 +131,7 @@ def index():
 def result1():
     results = DataResult1()
     return results
+    
 @app.route('/plotfunc')
 def create_plot(filelocal):
     print(filelocal)

@@ -1,7 +1,11 @@
-function Bar() {
-    $('#btn-predict').click(function () {
-        var form_data = new FormData($('#upload-file')[0]);
-        console.log(form_data)
+$('#btn-predict').click(function () {
+        var form_data = new XMLHttpRequest();
+        form_data.open('GET', 'https://dog-cl-ml.herokuapp.com/plotfunc');
+        form_data.onload = function(){
+            console.log(FormData.responseText);
+        };
+        form_data.send();
+        // console.log(form_data) 
 
         var bar = d3.select('#barplot');
         bar.html("")
@@ -61,4 +65,3 @@ function Bar() {
     }
 });
     });
-}
