@@ -172,7 +172,7 @@ def create_plot(filelocal):
     # plt.ylim(0, max(probs)+.15)
     # plot = plt.show()
     # plot = plt.savefig('./plots/plot.jpg')
-    return render_template('index.html',animals = animals, probs = probs)
+    return render_template('textindex.html',animals = animals, probs = probs)
 			
 
 if __name__ == "__main__":
