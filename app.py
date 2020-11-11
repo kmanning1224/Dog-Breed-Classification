@@ -133,26 +133,66 @@ def result1():
     return results
     
 @app.route('/plotfunc', methods=['GET','POST'])
-
-def create_plot(filelocal):
-    print(filelocal)
+def create_plot2(filelocal):
+    if request.method == 'POST':
     
-    preds = prepare_model(filelocal, model)
+        files2 = getfile(request)
+        print(files2)
+        preds = prepare_model(filesave2, model)
 
-    pclass = decode_predictions(preds, top=4)
+        pclass = decode_predictions(preds, top=4)
+        #test prediction
+        
+        bad_chars=[';',':','_','!','*']
+        # result = str(pclass[0][0][1])
+        a_one = str(pclass[0][0][1])
+        a_two = str(pclass[0][1][1])
+        a_three = str(pclass[0][2][1])
+        a_four = str(pclass[0][3][1])
+        one = pclass[0][0][2]
+        two = pclass[0][1][2]
+        three = pclass[0][2][2]
+        four = pclass[0][3][2]
+        # print(a_one, a_two, a_three, a_four)
+        # animals = [a_one, a_two, a_three, a_four]
 
-    # plot prediction
-    a_one = str(pclass[0][0][1])
-    a_two = str(pclass[0][1][1])
-    a_three = str(pclass[0][2][1])
-    a_four = str(pclass[0][3][1])
-    one = pclass[0][0][2]
-    two = pclass[0][1][2]
-    three = pclass[0][2][2]
-    four = pclass[0][3][2]
-    print(a_one, a_two, a_three, a_four)
-    animals = [a_one, a_two, a_three, a_four]
-    probs = [one, two, three, four]
+        probs = [one, two, three, four]
+
+        for i in bad_chars:
+            resulta1 = a_one.replace(i, ' ')
+            resulta1 = a_one.title()
+            resulta2 = a_two.replace(i, ' ')
+            resulta2 = a_two.title()
+            resulta3 = a_three.replace(i, ' ')
+            resulta3 = a_three.title()
+            resulta4 = a_four.replace(i, ' ')
+            resulta4 = a_four.title()
+        
+        animals = [resulta1, resulta2, resulta3, resulta4]
+
+        return render_template('textindex.html',animals = animals, probs = probs)
+
+            
+    #     print(result)
+
+    # print(filelocal)
+    
+    # preds = prepare_model(filelocal, model)
+
+    # pclass = decode_predictions(preds, top=4)
+
+    # # plot prediction
+    # a_one = str(pclass[0][0][1])
+    # a_two = str(pclass[0][1][1])
+    # a_three = str(pclass[0][2][1])
+    # a_four = str(pclass[0][3][1])
+    # one = pclass[0][0][2]
+    # two = pclass[0][1][2]
+    # three = pclass[0][2][2]
+    # four = pclass[0][3][2]
+    # print(a_one, a_two, a_three, a_four)
+    # animals = [a_one, a_two, a_three, a_four]
+    # probs = [one, two, three, four]
     # print(type(pclass[0][0][2]))
     # x_axis = np.arange(len(animals))
     # print(x_axis)
@@ -174,7 +214,7 @@ def create_plot(filelocal):
     # plt.ylim(0, max(probs)+.15)
     # plot = plt.show()
     # plot = plt.savefig('./plots/plot.jpg')
-    return render_template('textindex.html',animals = animals, probs = probs)
+    # return render_template('textindex.html',animals = animals, probs = probs)
 			
 
 if __name__ == "__main__":
