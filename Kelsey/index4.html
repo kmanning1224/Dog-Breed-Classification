@@ -143,9 +143,20 @@
             <label for="radio19" class="manual-btn"></label>
             <label for="radio20" class="manual-btn"></label>
         </div>
-        <!--manual navigation start-->
+        <!--manual navigation end-->
     </div>
     <!--image slider end-->
+
+    <script type="text/javascript">
+    var counter = 1; 
+    setInterval(function(){
+        document.getElementById('radio' + counter).checked = true;
+        counter++;
+        if (counter > 20){
+            counter = 1;
+        }
+    }, 5000);
+    </script>
 
 </body>
 </html>
