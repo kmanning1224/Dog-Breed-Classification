@@ -1,6 +1,5 @@
 import os
 import numpy as np
-import sys
 from werkzeug.utils import secure_filename
 # import keras.backend.tensorflow_backend as tb
 # tb._SYMBOLIC_SCOPE.value = True
@@ -12,11 +11,6 @@ from tensorflow.keras.models import load_model
 from flask import Flask, request, redirect, url_for, jsonify, render_template, abort
 
 import matplotlib.pyplot as plt
-import io
-import json
-import plotly
-import plotly.graph_objs as go
-from pychartjs import BaseChart, ChartType, Color
 import pandas as pd
 # from apps.TEST import img_load_test as imgtst
 # import python apps
@@ -57,6 +51,7 @@ def prepare_model(image_path, model):
 
     # predict
     predict = model.predict(x)
+    model.save('./model/xception.h5')
     # return the processed plot
     return predict
 
@@ -114,8 +109,13 @@ def DataResult1():
         pclass = decode_predictions(preds, top=5)
         #test prediction
         
-    
+        bad_chars=[';',':','_','!','*']
         result = str(pclass[0][0][1])
+
+        for i in bad_chars:
+            result = result.replace(i, ' ')
+            result = result.title()
+            
         print(result)
         create_plot(filesave2)
         
