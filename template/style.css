@@ -1,4 +1,4 @@
-body {
+.carousel {
     margin: 0;
     padding: 0; 
     height: 100vh;
@@ -13,6 +13,8 @@ body {
     height: 600px; 
     border-radius: 10px; 
     overflow: hidden;
+    justify-content: center;
+    align-items: center;
 }
 
 .slides {
