@@ -1,3 +1,6 @@
+let dogselect = "";
+
+
 $(document).ready(function () {
     // Init
     $('.image-section').hide();
@@ -9,7 +12,7 @@ $(document).ready(function () {
         if (input.files && input.files[0]) {
             var reader = new FileReader();
             reader.onload = function (e) {
-                $('#imagePreview').css('background-image', 'url(' + e.target.result + ')');
+                // $('#imagePreview').show('url(' + e.target.result + ')');
                 $('#imagePreview').show();
             }
             reader.readAsDataURL(input.files[0]);
@@ -24,9 +27,9 @@ $(document).ready(function () {
     });
 
     // Predict
-    $('#btn-predict').click(function () {
+    $('#script').click(function () {
         var form_data = new FormData($('#upload-file')[0]);
-        console.log(form_data)
+
         // // Show loading animation
         // $(this).hide();
         // $('.loader').show();
@@ -34,7 +37,7 @@ $(document).ready(function () {
         // Make prediction by calling api /predict
         $.ajax({
             type: 'POST',
-            url: '/predictresult1',
+            url: '/getDataPlot',
             data: form_data,
             contentType: false,
             cache: false,
@@ -43,9 +46,9 @@ $(document).ready(function () {
             success: function (data) {
                 // Get and display the result
                 $('.loader').hide();
-                $('#result').fadeIn(600);
+                $('#barplot').fadeIn(600);
                 $('#image-preview').show();
-                $('#result').text(' Result:  ' + data);
+                $('#barplot').plot(data);
                 console.log('Results: ' + data)
                 console.log('Success!');
             },
