@@ -15,4 +15,9 @@
     background-repeat: no-repeat;
     background-position: center;
 }
+
+h6 {
+    font: 25px;
+    font-weight: bold;
+}
 /* The grid: Four equal columns that floats next to each other */

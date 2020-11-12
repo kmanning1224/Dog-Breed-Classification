@@ -26,10 +26,10 @@ d3.json(queryUrl,function(data){
     p4.push(data[3].Percentage);
     console.log(p1);  
     
-    let one = Math.round(p1[0] * 100).toFixed(2);
-    let two = Math.round(p2[0] * 100).toFixed(2);
-    let three = Math.round(p3[0] * 100).toFixed(2);
-    let four = Math.round(p4[0] * 100).toFixed(2);
+    let one = Math.round(p1[0] * 100).toFixed(1);
+    let two = Math.round(p2[0] * 100).toFixed(1);
+    let three = Math.round(p3[0] * 100).toFixed(1);
+    let four = Math.round(p4[0] * 100).toFixed(1);
     console.log(two);
 
     let b1 = breed1[0].replace('_', ' ');
@@ -38,33 +38,42 @@ d3.json(queryUrl,function(data){
     let b4 = breed4[0].replace('_', ' ');
     console.log(b3);
 
-    // var yValue = [one, two, three, four];
+    var xValues = [b1, b2, b3, b4];
+    var yValues = [one, two, three, four]
 
-    var data = [
-        {
-          x: [b1, b2, b3, b4],
-          y: [one, two, three, four],
+    var trace1 = {
+          x: xValues,
+          y: yValues,
           type: 'bar',
+          text: [`${yValues[0]}%`, `${yValues[1]}%`,`${yValues[2]}%`,`${yValues[3]}%`],
+          textposition: 'auto',
+          hoverinfo: 'none',
           marker: {
             color: ['#2171b5', '#6baed6', '#bdd7e7', '#eff3ff'],
-            },
-        }],
+            line: {
+                color: 'rgb(8,48,107)',
+                width: 1.5
+              }
+          },
+        };
+    
+    var data = [trace1];
 
     var layout = {
-          title: `Probability of Dog Breeds`,
+          title: `Probabilities of Dog Breeds`,
           font: {
-                size: 12
+                size: 16
               },
           showlegend: false,
           xaxis: {
-                tickangle: -45
+                // tickangle: -45
               },
           yaxis: {
                 zeroline: false,
                 gridwidth: 2,
               },
-          height:600,
-          width: 600,
+          height: 600,
+          width: 850,
             }
           
 
