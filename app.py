@@ -3,6 +3,7 @@ import numpy as np
 from werkzeug.utils import secure_filename 
 # import keras.backend.tensorflow_backend as tb
 # tb._SYMBOLIC_SCOPE.value = True
+import tensorflow
 from tensorflow.keras.preprocessing import image
 from tensorflow.keras.preprocessing.image import img_to_array
 from tensorflow.keras.applications.xception import (
@@ -55,49 +56,49 @@ def prepare_model(image_path, model):
     # return the processed plot
     return predict
 
-def create_plot(filelocal):
-    print(filelocal)
+# def create_plot(filelocal):
+#     print(filelocal)
     
-    preds = prepare_model(filelocal, model)
+#     preds = prepare_model(filelocal, model)
 
-    pclass = decode_predictions(preds, top=4)
+#     pclass = decode_predictions(preds, top=4)
 
-    # plot prediction
-    a_one = str(pclass[0][0][1])
-    a_two = str(pclass[0][1][1])
-    a_three = str(pclass[0][2][1])
-    a_four = str(pclass[0][3][1])
-    one = pclass[0][0][2]
-    two = pclass[0][1][2]
-    three = pclass[0][2][2]
-    four = pclass[0][3][2]
-    print(a_one, a_two, a_three, a_four)
-    animals = [a_one, a_two, a_three, a_four]
-    probs = [one, two, three, four]
-    print(type(pclass[0][0][2]))
-    x_axis = np.arange(len(animals))
-    print(x_axis)
-    plt.figure(figsize=(8.25,6))
-    plt.bar(x_axis, probs, color=['darkgreen', 'lightgreen', 'yellow','orange'], align="edge")
-    tick_locations = [value for value in x_axis]
-    plt.xticks(tick_locations, animals, rotation=45, fontsize=15)
+#     # plot prediction
+#     a_one = str(pclass[0][0][1])
+#     a_two = str(pclass[0][1][1])
+#     a_three = str(pclass[0][2][1])
+#     a_four = str(pclass[0][3][1])
+#     one = pclass[0][0][2]
+#     two = pclass[0][1][2]
+#     three = pclass[0][2][2]
+#     four = pclass[0][3][2]
+#     print(a_one, a_two, a_three, a_four)
+#     animals = [a_one, a_two, a_three, a_four]
+#     probs = [one, two, three, four]
+#     print(type(pclass[0][0][2]))
+#     x_axis = np.arange(len(animals))
+#     print(x_axis)
+#     plt.figure(figsize=(8.25,6))
+#     plt.bar(x_axis, probs, color=['darkgreen', 'lightgreen', 'yellow','orange'], align="edge")
+#     tick_locations = [value for value in x_axis]
+#     plt.xticks(tick_locations, animals, rotation=45, fontsize=15)
     
-    for index, value in enumerate(probs):
-        # p = value*100
-        s = '{:.3f}%'.format(value*100)
-        t = type(s)
-        print(t)
-        plt.text(index + .15, value + .05, s, color='black', fontweight='bold', rotation=10, fontsize=12)
-    plt.title("Probabilities of Dog Breed", fontsize=15, fontweight='bold')
-    plt.xlabel("Dog Breeds", fontsize=15, fontweight='bold')
-    plt.ylabel("Probabilities", fontsize=15, fontweight='bold')
-    plt.xlim(-.5, len(x_axis)+.25)
-    plt.ylim(0, max(probs)+.15)
-    plot = plt.show()
-    # plot = plt.savefig('./plots/plot.jpg')
+    # for index, value in enumerate(probs):
+    #     # p = value*100
+    #     s = '{:.3f}%'.format(value*100)
+    #     t = type(s)
+    #     print(t)
+    #     plt.text(index + .15, value + .05, s, color='black', fontweight='bold', rotation=10, fontsize=12)
+    # plt.title("Probabilities of Dog Breed", fontsize=15, fontweight='bold')
+    # plt.xlabel("Dog Breeds", fontsize=15, fontweight='bold')
+    # plt.ylabel("Probabilities", fontsize=15, fontweight='bold')
+    # plt.xlim(-.5, len(x_axis)+.25)
+    # plt.ylim(0, max(probs)+.15)
+    # plot = plt.show()
+    # # plot = plt.savefig('./plots/plot.jpg')
 
 
-    return plot
+    # return plot
 
 def DataResult1():
     if request.method == 'POST':
@@ -125,7 +126,7 @@ def DataResult1():
 def ImgResult():
     list_of_files = glob.glob('./uploads/*') # * means all if need specific format then *.csv
     latest_file = max(list_of_files, key=os.path.getctime)
-    # print(latest_file)
+    print(latest_file)
     return latest_file
 
 
