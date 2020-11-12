@@ -125,7 +125,7 @@ def DataResult1():
 def ImgResult():
     list_of_files = glob.glob('./uploads/*') # * means all if need specific format then *.csv
     latest_file = max(list_of_files, key=os.path.getctime)
-    print(latest_file)
+    # print(latest_file)
     return latest_file
 
 
@@ -142,41 +142,33 @@ def result1():
 @app.route('/plotfunc')
 def create_plot():
     img = ImgResult()
-    print(img)
+    # print(img)
     preds = prepare_model(img, model)
 
     pclass = decode_predictions(preds, top=4)
     #test prediction
     
     bad_chars=[';',':','_','!','*']
-    # result = str(pclass[0][0][1])
-    a_one = str(pclass[0][0][1])
-    a_two = str(pclass[0][1][1])
-    a_three = str(pclass[0][2][1])
-    a_four = str(pclass[0][3][1])
+
+    # plot prediction
+    a_one = pclass[0][0][1]
+    a_two = pclass[0][1][1]
+    a_three = pclass[0][2][1]
+    a_four = pclass[0][3][1]
     one = pclass[0][0][2]
     two = pclass[0][1][2]
     three = pclass[0][2][2]
     four = pclass[0][3][2]
     # print(a_one, a_two, a_three, a_four)
-    # animals = [a_one, a_two, a_three, a_four]
-
-    probs = [one, two, three, four]
-
-    # plot prediction
-    a_one = str(pclass[0][0][1])
-    a_two = str(pclass[0][1][1])
-    a_three = str(pclass[0][2][1])
-    a_four = str(pclass[0][3][1])
-    one = pclass[0][0][2]
-    two = pclass[0][1][2]
-    three = pclass[0][2][2]
-    four = pclass[0][3][2]
-    print(a_one, a_two, a_three, a_four)
     animals = [a_one, a_two, a_three, a_four]
     probs = [one, two, three, four]
-    fulllib = animals, probs
-    test = json.dumps(str(fulllib))
+    dfs = pd.DataFrame({'Breed': animals,'Percentage': probs})
+    jsons = dfs.to_json(orient="records")
+    jsons = json.loads(jsons)
+    jsons = json.dumps(jsons, indent=4)
+    print(dfs)
+    # test = df.to_json()
+    # test = json.dumps(str(fulllib))
     # print(type(pclass[0][0][2]))
     # x_axis = np.arange(len(animals))
     # print(x_axis)
@@ -198,7 +190,7 @@ def create_plot():
     # plt.ylim(0, max(probs)+.15)
     # plot = plt.show()
     # plot = plt.savefig('./plots/plot.jpg')
-    return (test)
+    return jsons
 			
 
 if __name__ == "__main__":
