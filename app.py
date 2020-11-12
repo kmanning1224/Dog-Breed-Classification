@@ -170,7 +170,9 @@ def create_plot2():
         
         animals = [resulta1, resulta2, resulta3, resulta4]
 
-        return render_template('textindex.html',animals = animals, probs = probs)
+        # return jsonify(animals, probs)
+
+        return render_template('textindex.html', animals = animals, probs = probs)
 
             
     #     print(result)
