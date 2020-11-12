@@ -1,0 +1,283 @@
+.body {
+    background-color: green;
+}
+
+.carousel {
+    margin: 0;
+    padding: 0; 
+    display: flex; 
+    justify-content: center;
+    align-items: center; 
+    position: relative; 
+    top: 40px;
+}
+
+.slider {
+    width: 800px;
+    border-radius: 10px; 
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+}
+
+.slides {
+    width: 500%;
+    height: 500px; 
+    display: flex;
+}
+
+.slides input {
+    display: none;
+}
+
+.slide {
+    width: 20%;
+    transition: 2s;
+}
+
+.slide img {
+    width: 800px; 
+    height: 500px;
+}
+
+/*css for manual slide navigation*/
+
+.navigation-manual {
+    position: absolute;
+    width: 800px; 
+    margin-top: -30px;
+    display: flex;
+    justify-content: center;
+}
+
+.manual-btn {
+    border: 2px solid #D0F0C0; 
+    padding: 5px; 
+    border-radius: 10px;
+    cursor: pointer; 
+    transition: 1s;
+}
+
+.manual-btn:not(:last-child) {
+    margin-right: 5px;
+}
+
+.manual-btn:hover {
+    background: #40D3DC;
+}
+
+#radio1:checked ~ .first {
+    margin-left: 0; 
+}
+
+#radio2:checked ~ .first {
+    margin-left: -20%; 
+}
+
+#radio3:checked ~ .first {
+    margin-left: -40%; 
+}
+
+#radio4:checked ~ .first {
+    margin-left: -60%; 
+}
+
+#radio5:checked ~ .first {
+    margin-left: -80%; 
+}
+
+#radio6:checked ~ .first {
+    margin-left: -100%; 
+}
+
+#radio7:checked ~ .first {
+    margin-left: -120%; 
+}
+
+#radio8:checked ~ .first {
+    margin-left: -140%; 
+}
+
+#radio9:checked ~ .first {
+    margin-left: -160%; 
+}
+
+#radio10:checked ~ .first {
+    margin-left: -180%; 
+}
+
+#radio11:checked ~ .first {
+    margin-left: -200%; 
+}
+
+#radio12:checked ~ .first {
+    margin-left: -220%; 
+}
+
+#radio13:checked ~ .first {
+    margin-left: -240%; 
+}
+
+#radio14:checked ~ .first {
+    margin-left: -260%; 
+}
+
+#radio15:checked ~ .first {
+    margin-left: -280%; 
+}
+
+#radio16:checked ~ .first {
+    margin-left: -300%; 
+}
+
+#radio17:checked ~ .first {
+    margin-left: -320%; 
+}
+
+#radio18:checked ~ .first {
+    margin-left: -340%; 
+}
+
+#radio19:checked ~ .first {
+    margin-left: -360%; 
+}
+
+#radio20:checked ~ .first {
+    margin-left: -380%; 
+}
+
+/*css for automatic navigation*/
+
+.navigation-auto {
+    position: absolute;
+    display: flex;
+    width: 800px;
+    justify-content: center; 
+    margin-top: 470px;
+}
+
+.navigation-auto div {
+    border: 2px solid #D0F0C0;
+    padding: 5px; 
+    border-radius: 10px;
+    transition: 1s;
+}
+
+.navigation-auto div:not(:last-child) {
+    margin-right: 5px;
+}
+
+#radio1:checked ~ .navigation-auto .auto-btn1{
+    background: #D0F0C0;
+}
+#radio2:checked ~ .navigation-auto .auto-btn2{
+    background: #D0F0C0;
+}
+#radio3:checked ~ .navigation-auto .auto-btn3{
+    background: #D0F0C0;
+}
+#radio4:checked ~ .navigation-auto .auto-btn4{
+    background: #D0F0C0;
+}
+#radio5:checked ~ .navigation-auto .auto-btn5{
+    background: #D0F0C0;
+}
+#radio6:checked ~ .navigation-auto .auto-btn6{
+    background: #D0F0C0;
+}
+#radio7:checked ~ .navigation-auto .auto-btn7{
+    background: #D0F0C0;
+}
+#radio8:checked ~ .navigation-auto .auto-btn8{
+    background: #D0F0C0;
+}
+#radio9:checked ~ .navigation-auto .auto-btn9{
+    background: #D0F0C0;
+}
+#radio10:checked ~ .navigation-auto .auto-btn10{
+    background: #D0F0C0;
+}
+#radio11:checked ~ .navigation-auto .auto-btn11{
+    background: #D0F0C0;
+}
+#radio12:checked ~ .navigation-auto .auto-btn12{
+    background: #D0F0C0;
+}
+#radio13:checked ~ .navigation-auto .auto-btn13{
+    background: #D0F0C0;
+}
+#radio14:checked ~ .navigation-auto .auto-btn14{
+    background: #D0F0C0;
+}
+#radio15:checked ~ .navigation-auto .auto-btn15{
+    background: #D0F0C0;
+}
+#radio16:checked ~ .navigation-auto .auto-btn16{
+    background: #D0F0C0;
+}
+#radio17:checked ~ .navigation-auto .auto-btn17{
+    background: #D0F0C0;
+}
+#radio18:checked ~ .navigation-auto .auto-btn18{
+    background: #D0F0C0;
+}
+#radio19:checked ~ .navigation-auto .auto-btn19{
+    background: #D0F0C0;
+}
+#radio20:checked ~ .navigation-auto .auto-btn20{
+    background: #D0F0C0;
+} 
+
+.navbar-nav ul {
+    width: 100%;  /* i'm assuming full width */
+    height: 80px; /* change it to desired width */
+    background-color: red; /* change to desired color */
+}
+.logo {
+    display: inline-block;
+    vertical-align: middle;
+    width: 80px;
+    height: 80px;
+    padding:10px;
+    margin:0px;
+    
+      /* if you want it vertically middle of the navbar. */
+}
+.navigation-bar > a {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 40px;
+    height: 80px;        /* if you want it to take the full height of the bar */
+    line-height: 80px;    /* if you want it vertically middle of the navbar */
+}
+.nav-item {
+    font-size: larger;
+}
+
+.navbar-brand {
+    font-weight: 1000;
+    font-style: italic;
+    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+    
+}
+
+.wrapper {
+    position: relative;
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 2px;
+    top: 80px;
+}
+img {
+    width: 200px;
+    height: 150px;
+    border-radius: 20px;
+}
+img:hover {
+    transform: scale(1.03);
+}
+
+.p {
+    position: relative; 
+    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+}
