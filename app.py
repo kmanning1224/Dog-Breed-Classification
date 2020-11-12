@@ -146,6 +146,22 @@ def create_plot():
     preds = prepare_model(img, model)
 
     pclass = decode_predictions(preds, top=4)
+    #test prediction
+    
+    bad_chars=[';',':','_','!','*']
+    # result = str(pclass[0][0][1])
+    a_one = str(pclass[0][0][1])
+    a_two = str(pclass[0][1][1])
+    a_three = str(pclass[0][2][1])
+    a_four = str(pclass[0][3][1])
+    one = pclass[0][0][2]
+    two = pclass[0][1][2]
+    three = pclass[0][2][2]
+    four = pclass[0][3][2]
+    # print(a_one, a_two, a_three, a_four)
+    # animals = [a_one, a_two, a_three, a_four]
+
+    probs = [one, two, three, four]
 
     # plot prediction
     a_one = str(pclass[0][0][1])
