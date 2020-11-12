@@ -18,6 +18,7 @@ $(document).ready(function () {
     $("#imageUpload").change(function () {
         $('.image-section').show();
         $('#btn-predict').show();
+        $('#btn-plot').hide();
         $('#result').text('');
         $('#result').hide();
         readURL(this);

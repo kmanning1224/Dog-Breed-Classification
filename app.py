@@ -8,10 +8,11 @@ from tensorflow.keras.preprocessing.image import img_to_array
 from tensorflow.keras.applications.xception import (
 	Xception, preprocess_input, decode_predictions)
 from tensorflow.keras.models import load_model
-from flask import Flask, request, redirect, url_for, jsonify, render_template, abort
-
+from flask import Flask, request, redirect, url_for, jsonify, render_template, abort, Response
+import glob
 import matplotlib.pyplot as plt
 import pandas as pd
+import json
 # from apps.TEST import img_load_test as imgtst
 # import python apps
 # from apps.xception import prediction_local
@@ -116,10 +117,16 @@ def DataResult1():
             result = result.title()
             
         print(result)
-        create_plot(filesave2)
+        # create_plot(filesave2)
         
         
         return result
+
+def ImgResult():
+    list_of_files = glob.glob('./uploads/*') # * means all if need specific format then *.csv
+    latest_file = max(list_of_files, key=os.path.getctime)
+    print(latest_file)
+    return latest_file
 
 
 
@@ -132,12 +139,11 @@ def result1():
     results = DataResult1()
     return results
     
-@app.route('/plotfunc', methods=['GET','POST'])
-
-def create_plot(filelocal):
-    print(filelocal)
-    
-    preds = prepare_model(filelocal, model)
+@app.route('/plotfunc')
+def create_plot():
+    img = ImgResult()
+    print(img)
+    preds = prepare_model(img, model)
 
     pclass = decode_predictions(preds, top=4)
 
@@ -153,6 +159,8 @@ def create_plot(filelocal):
     print(a_one, a_two, a_three, a_four)
     animals = [a_one, a_two, a_three, a_four]
     probs = [one, two, three, four]
+    fulllib = animals, probs
+    test = json.dumps(str(pclass))
     # print(type(pclass[0][0][2]))
     # x_axis = np.arange(len(animals))
     # print(x_axis)
@@ -174,7 +182,7 @@ def create_plot(filelocal):
     # plt.ylim(0, max(probs)+.15)
     # plot = plt.show()
     # plot = plt.savefig('./plots/plot.jpg')
-    return render_template('textindex.html',animals = animals, probs = probs)
+    return (test)
 			
 
 if __name__ == "__main__":

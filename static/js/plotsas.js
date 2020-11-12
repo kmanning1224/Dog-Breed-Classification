@@ -1,6 +1,6 @@
-$('#btn-predict').click(function () {
+$('#btn-plot').click(function () {
         var form_data = new XMLHttpRequest();
-        form_data.open('GET', 'https://dog-cl-ml.herokuapp.com/plotfunc');
+        form_data.open('GET', '/plotfunc');
         form_data.onload = function(){
             console.log(FormData.responseText);
         };
@@ -65,3 +65,4 @@ $('#btn-predict').click(function () {
     }
 });
     });
+});
