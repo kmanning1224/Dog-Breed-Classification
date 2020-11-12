@@ -1,7 +1,7 @@
-function barplot(){
-var queryUrl = 'http://127.0.0.1:5000/plotfunc'
+function PlotDog() {
+let queryUrl = 'http://127.0.0.1:5000/plotfunc'
 
-d3.json(queryUrl,function(){
+d3.json(queryUrl,function(data){
     let bar = d3.select('#barplot');
     bar.html("");
     
@@ -14,22 +14,15 @@ d3.json(queryUrl,function(){
     let p3 = [];
     let p4 = [];
 
-    filter.map((data) => {
     breed1.push(data[0].Breed);
     console.log(breed1)    
 
 
 
 
-    } 
-
-
-
+    }); 
 
 }
-}
-
-
 
 
 

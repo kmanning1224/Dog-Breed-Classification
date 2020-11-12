@@ -84,8 +84,7 @@ $(document).ready(function () {
                 //     }
                 // }
         
-                
-                console.log('Results: ' + data)
+                console.log('Results: ' + data);
                 console.log('Success!');
             },
         });
