@@ -176,7 +176,7 @@ def create_plot():
     animals = [a_one, a_two, a_three, a_four]
     probs = [one, two, three, four]
     fulllib = animals, probs
-    test = json.dumps(str(pclass))
+    test = json.dumps(str(fulllib))
     # print(type(pclass[0][0][2]))
     # x_axis = np.arange(len(animals))
     # print(x_axis)

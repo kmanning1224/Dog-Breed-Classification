@@ -65,4 +65,3 @@ $('#btn-plot').click(function () {
     }
 });
     });
-});

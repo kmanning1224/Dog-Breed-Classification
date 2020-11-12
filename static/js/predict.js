@@ -48,7 +48,7 @@ $(document).ready(function () {
                 $('#result').fadeIn(600);
                 $('#image-preview').show();
                 $('#result').text(' Result:  ' + data);
-                var a_one = '{{animal[0]}}'
+                var a_one = data
                 var a_two = '{{animal[1]}}'
                 var a_three = '{{animal[2]}}'
                 var a_four = '{{animal[3]}}'

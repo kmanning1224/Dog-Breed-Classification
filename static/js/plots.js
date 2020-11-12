@@ -1,31 +1,20 @@
-$(document).ready(function () {
-    // Upload Preview
-    function readURL(input) {
-        if (input.files && input.files[0]) {
-            var reader = new FileReader();
-            reader.onload = function (e) {
-                $('#imagePreview').show();
-            }
-            reader.readAsDataURL(input.files[0]);
-        }
-    }
-    $("#imageUpload").change(function () {
-        $('.image-section').show();
-        $('#btn-plot').show();
-        $('#result').text('');
-        $('#result').hide();
-        readURL(this);
-    });
+function PlotDog(){
+    let url = "/plotfunc"
 
-    // Predict
-    $('#btn-plot').click(function () {
-        var form_data = new FormData($('#upload-file')[0]);
-        console.log(form_data)
-        // // Show loading animation
-        // $(this).hide();
-        // $('.loader').show();
+    d3.json(url, function(datar) {
+        let bar2 = d3.select('#bar-plot')
+        bar2.html("")
 
-        // Make prediction by calling api /predict
+        let Breed = [];
+        let Percent = [];
+
+        let prediction = new XMLHttpRequest();
+        form_data.open('GET', '/plotfunc');
+        form_data.onload = function(){
+            console.log(FormData.responseText);
+        };
+        form_data.send();
+
         $.ajax({
             url: '/plotfunc',
             data: form_data,
@@ -42,14 +31,14 @@ $(document).ready(function () {
                 // console.log('Results: ' + data)
                 // console.log('Success!');}
 
-        var a_one = '{{animal[0]}}'
-        var a_two = '{{animal[1]}}'
-        var a_three = '{{animal[2]}}'
-        var a_four = '{{animal[3]}}'
-        var one = '{{probs[0]}}'
-        var two = '{{probs[1]}}'
-        var three = '{{probs[2]}}'
-        var four = '{{probs[3]}}'
+        var a_one = animals[0]
+        var a_two = animals[1]
+        var a_three = animals[2]
+        var a_four = animals[3]
+        var one = probs[0]
+        var two = probs[1]
+        var three = probs[2]
+        var four = probs[3]
         var p_one = Math.round(one * 100).toFixed(2);
         var p_two = Math.round(two * 100).toFixed(2);
         var p_three = Math.round(three * 100).toFixed(2);
@@ -80,4 +69,4 @@ $(document).ready(function () {
     }
 });
     });
-});
+};
