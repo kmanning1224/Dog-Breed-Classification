@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 $('#btn-plot').click(function () {
         var form_data = new XMLHttpRequest();
         form_data.open('GET', '/plotfunc');
@@ -67,60 +66,3 @@ $('#btn-plot').click(function () {
 });
     });
 });
-=======
-// $(document).ready(function () {
-//     // Init
-//     $('.image-section').hide();
-//     $('.loader').hide();
-//     $('#result').hide();
-
-//     // Upload Preview
-//     function readURL(input) {
-//         if (input.files && input.files[0]) {
-//             var reader = new FileReader();
-//             reader.onload = function (e) {
-//                 $('#imagePreview').css('background-image', 'url(' + e.target.result + ')');
-//                 $('#imagePreview').show();
-//             }
-//             reader.readAsDataURL(input.files[0]);
-//         }
-//     }
-//     $("#imageUpload").change(function () {
-//         $('.image-section').show();
-//         $('#btn-predict').show();
-//         $('#result').text('');
-//         $('#result').hide();
-//         readURL(this);
-//     });
-
-// create Plot
-$('#btn-predict').click(function () {
-    var form_data = new FormData($('#upload-file')[0]);
-    console.log(form_data)
-    // // Show loading animation
-    // $(this).hide();
-    // $('.loader').show();
-
-    // Make prediction by calling api /predict
-    $.ajax({
-        type: 'POST',
-        url: '/plotfunc',
-        data: form_data,
-        contentType: false,
-        cache: false,
-        processData: false,
-        async: true,
-        success: function (data) {
-            // // Get and display the result
-
-            $('.loader').hide();
-            $('#result').fadeIn(600);
-            // $('#image-preview').show();
-            $('#barplot').text(' Result:  ' + data);
-            console.log {animals}
-            console.log('Success!');
-        },
-    });
-    })
-})
->>>>>>> e27d160dbf58b4bcb3eb7963f0f9dc7205805c7b
