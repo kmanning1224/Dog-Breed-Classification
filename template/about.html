@@ -44,7 +44,7 @@
         <a class="nav-link" href="#">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/template/about.html">Who we are</a>
+        <a class="nav-link" href="#">Who we are</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Data</a>
@@ -213,120 +213,12 @@
 <br>
 <br>
 <style>
-h3 {
+p {
   text-align: center;
 }
-h1{
-  text-align:center;
-}
 </style>
-<h1>Lets predict a dog using Xception! </h1>
-<h3 >Click an image below or upload your own</h3>
-<br>
 
-<!-- <section> -->
-<div class="container">
-  <div class="row">
-    <div class="col-lg-1"></div>
-    <div class="col-lg-10 lg-secondary">
-    <div class="wrapper">
-        <div class="box">
-        <form id="pred1">
-        <img src="{{ url_for('static', filename='Images/american-bulldog.jpg') }}"></form>
-        <h6 id="result2"></h6>
-        </div>
-        <div class="box"><form id="pred2"><img src="static/Images/basset-hound.jpg"></form>
-        <h6 id="result3"></h6>
-        </div>
-        <div class="box"><form id ="pred3"><img src="static/Images/beagle.jpg"></form>
-        <h6 id="result4"></h6>
-        </div>
-        <div class="box"><form id="pred4"><img src="static/Images/boxer.jpeg" ></form>
-        <h6 id="result5"></h6>
-        </div>
-        <div class="box"><form id="pred5"><img src="static/Images/cavalier.jpg"></form>
-        <h6 id="result6"></h6>
-        </div>
-        <div class="box"><form id="pred6"><img src="static/Images/chihuahua.jpg"></form>
-        <h6 id="result7"></h6>
-        </div>
-        <div class="box"><form id="pred7"><img src="static/Images/chinese-crested.jpg"></form>
-        <h6 id="result8"></h6>
-        </div>
-        <div class="box"><form id="pred8"><img src="static/Images/chow-chow.jpg"></form>
-        <h6 id="result9"></h6>
-        </div>
-        <div class="box"><form id="pred9"><img src="static/Images/corgi.jpg"></form>
-        <h6 id="result10"></h6>
-        </div>
-        <div class="box"><form id="pred10"><img src="static/Images/dachshund.jpg"></form>
-        <h6 id="result11"></h6>
-        </div>
-        <div class="box"><form id="pred11"><img src="static/Images/german-shepherd.jpg"></form>
-        <h6 id="result12"></h6>
-        </div>
-        <div class="box"><form id="pred12"><img src="static/Images/great-dane.jpg" ></form>
-        <h6 id="result13"></h6>
-        </div>
-    </div>
-</section>
-
-<!-- <section>
-    <div class="image-container">
-      <div class="image-wrapper">
-        <input type="file" name="" id="file" hidden />
-        <label for="file" id="selector">Select file</label>
-        <script src="/static/js/app.js"></script>
-      </div>-->
-    </div>
-</section>
-<section>
-<div class="wrapper">
-<div class="container-xl">
-      <div class="row">
-        <div class="col-lg-6 order-lg-2">
-          <div class="p-5">
-            <form id="upload-file" method="post" enctype="multipart/form-data">
-        <label for="imageUpload" class="upload-label">
-        Click here to upload image!
-        </label>
-        <input type="file" name="file" id="imageUpload" accept=".png, .jpg, .jpeg">
-    </form>
-
-    <div class="image-section">
-        <div class="img-preview">
-            <div id="imagePreview">
-            </div>
-        </div>
-        <div>
-              <button type="button" class="btn btn-success btn-lg "  id="btn-predict">Predict!</button>
-          <br>
-          
-
-    <div class="loader" style="display:none;"></div>
-     <br>
-<div class="container">
-
-  
-  <!-- Top Guess by Xception -->
-   <div><h3 id="result"></h3> </div>
-   <!-- Plot section -->
-  <div id= "barplot"></div>
-  
- 
-   
-    </div>
-  <div class="wrapper">
-
-          </div>
-        </div>
-      </div>
-    </div>
-</section>
-
-
-
-
+<p>SYNOPSIS OF PROJECT</p>
   <!-- Footer -->
   <footer>
 
