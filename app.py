@@ -133,7 +133,7 @@ def ImgResult():
 
 @app.route('/',  methods=['GET'])
 def index():
-    return render_template('textindex.html')
+    return render_template('final.html')
 
 @app.route('/predictresult1', methods=['GET','POST'])
 def result1():

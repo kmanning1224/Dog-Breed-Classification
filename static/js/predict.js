@@ -32,11 +32,6 @@ $(document).ready(function () {
         console.log(form_data);
         makeCall(form_data);
     })
-    $('.box').click(function (event){
-        let url = $(event.target).attr('src');
-        console.log(url);
-        makeCall(url);
-    })
         // Make prediction by calling api /predict
     function makeCall(path){
         console.log(path)
