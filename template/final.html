@@ -84,8 +84,8 @@
             <input type="radio" name="radio-btn" id="radio16">
             <input type="radio" name="radio-btn" id="radio17">
             <input type="radio" name="radio-btn" id="radio18">
-            <input type="radio" name="radio-btn" id="radio19">
-            <input type="radio" name="radio-btn" id="radio20">
+            <!-- <input type="radio" name="radio-btn" id="radio19">
+            <input type="radio" name="radio-btn" id="radio20"> -->
             <!--radio buttons end-->
             <!--slide images start-->
             <div class="slide first">
@@ -137,10 +137,11 @@
                 <img src="static/Images/poodle.jpg">
             </div>
             <div class="slide">
-                <img src="ttps://finalprojectdogsucf.s3.amazonaws.com/projectdata/saint-bernard.jpg"  >
+                <!-- <img src="ttps://finalprojectdogsucf.s3.amazonaws.com/projectdata/saint-bernard.jpg"  > -->
+                <img src="static/Images/rottweiler.jpg">
             </div>
             <div class="slide">
-                <img src="static/Images/rottweiler.jpg" >
+                <img src="static/Images/saint-bernard.jpg" >
             </div>
             <!--slide images end-->
             <!--automatic navigation start-->
@@ -163,8 +164,8 @@
                 <div class="auto-btn16"></div>
                 <div class="auto-btn17"></div>
                 <div class="auto-btn18"></div>
-                <div class="auto-btn19"></div>
-                <div class="auto-btn20"></div>
+                <!-- <div class="auto-btn19"></div>
+                <div class="auto-btn20"></div> -->
             </div>
             <!--automatic navigation end-->
         </div>
@@ -188,8 +189,8 @@
             <label for="radio16" class="manual-btn"></label>
             <label for="radio17" class="manual-btn"></label>
             <label for="radio18" class="manual-btn"></label>
-            <label for="radio19" class="manual-btn"></label>
-            <label for="radio20" class="manual-btn"></label>
+            <!-- <label for="radio19" class="manual-btn"></label>
+            <label for="radio20" class="manual-btn"></label> -->
         </div>
         <!--manual navigation end-->
     </div>
@@ -200,7 +201,7 @@
     setInterval(function(){
         document.getElementById('radio' + counter).checked = true;
         counter++;
-        if (counter > 20){
+        if (counter > 18){
             counter = 1;
         }
     }, 5000);
