@@ -380,9 +380,18 @@ input[type="file"] {
     color: #39D2B4;
 }
 
+h1 {
+    font-family:"Arial Black", Gadget, sans-serif !important;
+    font-size: 55px !important;
+    font-weight:bold !important;
+    text-align:center !important;
+    color: darkgrey;
+    /* margin:35px; */
+  }
+
 h3 {
     font-family:"Arial Black", Gadget, sans-serif !important;
-    font-size: 45px !important;
+    font-size: 35px !important;
     font-weight:bold !important;
     text-align:center !important;
     color: darkgrey;
@@ -391,5 +400,5 @@ h3 {
 
 /* .box {
     margin:25px; */
-}
+/* } */
 
