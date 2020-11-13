@@ -32,10 +32,10 @@ d3.json(queryUrl,function(data){
     let four = Math.round(p4[0] * 100).toFixed(1);
     // console.log(two);
 
-    let b1 = breed1[0].replace('_', ' ');
-    let b2 = breed2[0].replace('_', ' ');
-    let b3 = breed3[0].replace('_', ' ');
-    let b4 = breed4[0].replace('_', ' ');
+    let b1 = breed1[0].replace('_', ' ').replace('_', ' ');
+    let b2 = breed2[0].replace('_', ' ').replace('_', ' ');
+    let b3 = breed3[0].replace('_', ' ').replace('_', ' ');
+    let b4 = breed4[0].replace('_', ' ').replace('_', ' ');
     // console.log(b3);
 
     var xValues = [b1, b2, b3, b4];
@@ -60,7 +60,7 @@ d3.json(queryUrl,function(data){
     var data = [trace1];
 
     var layout = {
-          title: `Probabilities of Dog Breeds`,
+          title: `Top Four Probabilities of Dog Breed`,
           font: {
                 size: 16
               },
@@ -72,8 +72,8 @@ d3.json(queryUrl,function(data){
                 zeroline: false,
                 gridwidth: 2,
               },
-          height: 500,
-          width: 850,
+          height: 600,
+          width: 1150,
             }
           
 
