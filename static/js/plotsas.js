@@ -49,9 +49,9 @@ d3.json(queryUrl,function(data){
           textposition: 'auto',
           hoverinfo: 'none',
           marker: {
-            color: ['#2171b5', '#6baed6', '#bdd7e7', '#eff3ff'],
+            color: ['#238b45', '#74c476', '#bae4b3', '#edf8e9'],
             line: {
-                color: 'rgb(8,48,107)',
+                color: '#00441b',
                 width: 1.5
               }
           },
