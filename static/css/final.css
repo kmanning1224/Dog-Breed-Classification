@@ -262,10 +262,14 @@
 }
 
 .wrapper {
-    position: relative;
+    position: center;
     display: grid; 
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     grid-gap: 2px;
+    top: 80px;
+}
+.wrapper2 {
+    position: relative; 
     top: 80px;
 }
 img {
@@ -317,7 +321,16 @@ label.image img {
     height: 100%;
     object-fit: cover; 
 }
-
+.block {
+    display: block;
+    width: 100%;
+    border: none;
+    background-color: #4CAF50;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+  }
 .image-container .image-wrapper {
     position: relative;
     height: 400px;

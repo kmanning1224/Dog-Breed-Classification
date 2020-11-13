@@ -1,9 +1,7 @@
 $(document).ready(function () {
     // Init
-    $('.image-section').hide();
-    $('.loader').hide();
     $('#result').hide();
-    $('#btn-plot').hide();
+
 
     // Upload Preview
     function readURL(input) {

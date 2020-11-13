@@ -19,14 +19,13 @@
     <link href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <link rel="Stylesheet" type="text/css" href="/static/css/style.css" rel="stylesheet">
     <link rel="shortcut icon" href="">
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.min.js"> </script>
-
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 </head>
 <body style="background-color: rgba(11,156,49,0.5)">
@@ -213,9 +212,19 @@
 <br>
 <br>
 <br>
-<h3>Select an image below or upload your own.</h3>
+<style>
+h3 {
+  text-align: center;
+}
+h1{
+  text-align:center;
+}
+</style>
+<h1>Lets predict a dog using Xception! </h1>
+<h3 >Click an image below or upload your own.</h3>
 
 <!-- <section> -->
+<div class="container">
   <div class="row">
     <div class="col-lg-1"></div>
     <div class="col-lg-10 lg-secondary">
@@ -234,17 +243,23 @@
         <div class="box"><form id="pred4"><img src="static/Images/boxer.jpeg" ></form>
         <h6 id="result5"></h6>
         </div>
+        <div class="box"><form id="pred5"><img src="static/Images/cavalier.jpg"></form>
+        <h6 id="result6"></h6>
+        </div>
         <div class="box"><form id="pred6"><img src="static/Images/chihuahua.jpg"></form>
         <h6 id="result7"></h6>
         </div>
-        <!-- <div class="box"><form id="pred7"><img src="static/Images/chinese-crested.jpg"></form>
+        <div class="box"><form id="pred7"><img src="static/Images/chinese-crested.jpg"></form>
         <h6 id="result8"></h6>
-        </div>-->
+        </div>
         <div class="box"><form id="pred8"><img src="static/Images/chow-chow.jpg"></form>
         <h6 id="result9"></h6>
         </div>
         <div class="box"><form id="pred9"><img src="static/Images/corgi.jpg"></form>
         <h6 id="result10"></h6>
+        </div>
+        <div class="box"><form id="pred10"><img src="static/Images/dachshund.jpg"></form>
+        <h6 id="result11"></h6>
         </div>
         <div class="box"><form id="pred11"><img src="static/Images/german-shepherd.jpg"></form>
         <h6 id="result12"></h6>
@@ -266,7 +281,8 @@
 </section>
 <section>
 <div class="wrapper">
-      <div class="row align-items-center">
+<div class="container-xl">
+      <div class="row">
         <div class="col-lg-6 order-lg-2">
           <div class="p-5">
             <form id="upload-file" method="post" enctype="multipart/form-data">
@@ -276,7 +292,7 @@
         <input type="file" name="file" id="imageUpload" accept=".png, .jpg, .jpeg">
     </form>
 
-    <div class="image-section" style="display:none;">
+    <div class="image-section">
         <div class="img-preview">
             <div id="imagePreview">
             </div>
@@ -290,14 +306,17 @@
      <br>
 <div class="container">
 
-  <!-- Plot section -->
-   <div><h3 id="result"></h3> </div>
-  <div id= "barplot"></div>
+  
   <!-- Top Guess by Xception -->
+   <div><h3 id="result"></h3> </div>
+   <!-- Plot section -->
+  <div id= "barplot"></div>
+  
  
    
     </div>
-  
+  <div class="wrapper">
+
           </div>
         </div>
       </div>
@@ -308,7 +327,7 @@
 
 
   <!-- Footer -->
-  <footer class="py-5 bg-black">
+  <footer>
 
   </footer>
 

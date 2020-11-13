@@ -17,7 +17,7 @@ $(document).ready(function () {
             success: function (data) {
                 // Get and display the result
                 $('#result8').fadeIn(600);
-                $('#result8').text('Xception Predicts:' +'\n '+ data);
+                $('#result8').text(data);
                 console.log(' Result:  ' + data);
                 console.log('Xception Success!');
             },
