@@ -28,31 +28,24 @@ $(document).ready(function () {
     // Predict
     $('#btn-predict').click(function () {
         var form_data = new FormData($('#upload-file')[0]);
-        // let form_data = "https://finalprojectdogsucf.s3.amazonaws.com/projectdata/american-bulldog.jpg";
-        console.log(form_data);
-        makeCall(form_data);
-    })
-        // Make prediction by calling api /predict
-    function makeCall(path){
-        console.log(path)
+
+        // Make prediction by calling api /predictXception
         $.ajax({
             type: 'POST',
-            url: '/predictresult1',
-            data: path,
+            url: '/prediction',
+            data: form_data,
             contentType: false,
             cache: false,
             processData: false,
             async: true,
             success: function (data) {
                 // Get and display the result
-                $('.loader').hide();
                 $('#result').fadeIn(600);
-                $('#image-preview').show();
                 $('#result').text(' Result:  ' + data);
-                console.log('Results: ' + data);
-                console.log('Success!');
+                console.log(' Result:  ' + data);
+                console.log('Xception Success!');
             },
-        
         }).then(PlotDog);
-    };
+    });
+
 });

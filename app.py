@@ -1,9 +1,6 @@
 import os
 import numpy as np
 from werkzeug.utils import secure_filename 
-# import keras.backend.tensorflow_backend as tb
-# tb._SYMBOLIC_SCOPE.value = True
-import tensorflow
 from tensorflow.keras.preprocessing import image
 from tensorflow.keras.preprocessing.image import img_to_array
 from tensorflow.keras.applications.xception import (
@@ -14,10 +11,8 @@ import glob
 import matplotlib.pyplot as plt
 import pandas as pd
 import json
-# from apps.TEST import img_load_test as imgtst
-# import python apps
-# from apps.xception import prediction_local
-# Start Flask
+from apps.manualpred import predict1, predict2, predict3, predict4, predict5, predict6,predict7, predict8, predict9, predict10, predict11, predict12
+
 app = Flask(__name__, template_folder='template')
 
 
@@ -27,7 +22,6 @@ def load_model():
 	model = Xception(weights='imagenet', include_top=True)
 print('**Keras Model Loading**')
 load_model()
-print('**Keras Model Loaded**')
 
 
 
@@ -56,49 +50,7 @@ def prepare_model(image_path, model):
     # return the processed plot
     return predict
 
-# def create_plot(filelocal):
-#     print(filelocal)
-    
-#     preds = prepare_model(filelocal, model)
 
-#     pclass = decode_predictions(preds, top=4)
-
-#     # plot prediction
-#     a_one = str(pclass[0][0][1])
-#     a_two = str(pclass[0][1][1])
-#     a_three = str(pclass[0][2][1])
-#     a_four = str(pclass[0][3][1])
-#     one = pclass[0][0][2]
-#     two = pclass[0][1][2]
-#     three = pclass[0][2][2]
-#     four = pclass[0][3][2]
-#     print(a_one, a_two, a_three, a_four)
-#     animals = [a_one, a_two, a_three, a_four]
-#     probs = [one, two, three, four]
-#     print(type(pclass[0][0][2]))
-#     x_axis = np.arange(len(animals))
-#     print(x_axis)
-#     plt.figure(figsize=(8.25,6))
-#     plt.bar(x_axis, probs, color=['darkgreen', 'lightgreen', 'yellow','orange'], align="edge")
-#     tick_locations = [value for value in x_axis]
-#     plt.xticks(tick_locations, animals, rotation=45, fontsize=15)
-    
-    # for index, value in enumerate(probs):
-    #     # p = value*100
-    #     s = '{:.3f}%'.format(value*100)
-    #     t = type(s)
-    #     print(t)
-    #     plt.text(index + .15, value + .05, s, color='black', fontweight='bold', rotation=10, fontsize=12)
-    # plt.title("Probabilities of Dog Breed", fontsize=15, fontweight='bold')
-    # plt.xlabel("Dog Breeds", fontsize=15, fontweight='bold')
-    # plt.ylabel("Probabilities", fontsize=15, fontweight='bold')
-    # plt.xlim(-.5, len(x_axis)+.25)
-    # plt.ylim(0, max(probs)+.15)
-    # plot = plt.show()
-    # # plot = plt.savefig('./plots/plot.jpg')
-
-
-    # return plot
 
 def DataResult1():
     if request.method == 'POST':
@@ -133,12 +85,15 @@ def ImgResult():
 
 @app.route('/',  methods=['GET'])
 def index():
+
     return render_template('final.html')
 
-@app.route('/predictresult1', methods=['GET','POST'])
+@app.route('/prediction', methods=['GET','POST'])
 def result1():
     results = DataResult1()
     return results
+
+
     
 @app.route('/plotfunc')
 def create_plot():
@@ -149,7 +104,6 @@ def create_plot():
     pclass = decode_predictions(preds, top=4)
     #test prediction
     
-    bad_chars=[';',':','_','!','*']
 
     # plot prediction
     a_one = pclass[0][0][1]
@@ -168,31 +122,81 @@ def create_plot():
     jsons = json.loads(jsons)
     jsons = json.dumps(jsons, indent=4)
     print(dfs)
-    # test = df.to_json()
-    # test = json.dumps(str(fulllib))
-    # print(type(pclass[0][0][2]))
-    # x_axis = np.arange(len(animals))
-    # print(x_axis)
-    # plt.figure(figsize=(8.25,6))
-    # plt.bar(x_axis, probs, color=['darkgreen', 'lightgreen', 'yellow','orange'], align="edge")
-    # tick_locations = [value for value in x_axis]
-    # plt.xticks(tick_locations, animals, rotation=45, fontsize=15)
-    
-    # for index, value in enumerate(probs):
-    #     # p = value*100
-    #     s = '{:.3f}%'.format(value*100)
-    #     t = type(s)
-    #     print(t)
-    #     plt.text(index + .15, value + .05, s, color='black', fontweight='bold', rotation=10, fontsize=12)
-    # plt.title("Probabilities of Dog Breed", fontsize=15, fontweight='bold')
-    # plt.xlabel("Dog Breeds", fontsize=15, fontweight='bold')
-    # plt.ylabel("Probabilities", fontsize=15, fontweight='bold')
-    # plt.xlim(-.5, len(x_axis)+.25)
-    # plt.ylim(0, max(probs)+.15)
-    # plot = plt.show()
-    # plot = plt.savefig('./plots/plot.jpg')
     return jsons
-			
+
+@app.route('/manualpreds1', methods=['POST'])
+def manualpred1():
+    pred = predict1()
+    print(pred)
+    return pred		
+
+@app.route('/manualpreds2', methods=['POST'])
+def manualpred2():
+    pred = predict2()
+    print(pred)
+    return pred
+
+@app.route('/manualpreds3', methods=['POST'])
+def manualpred3():
+    pred = predict3()
+    print(pred)
+    return pred	
+
+@app.route('/manualpreds4', methods=['POST'])
+def manualpred4():
+    pred = predict4()
+    print(pred)
+    return pred
+
+@app.route('/manualpreds5', methods=['POST'])
+def manualpred5():
+    pred = predict5()
+    print(pred)
+    return pred
+
+@app.route('/manualpreds6', methods=['POST'])
+def manualpred6():
+    pred = predict6()
+    print(pred)
+    return pred
+
+@app.route('/manualpreds7', methods=['POST'])
+def manualpred7():
+    pred = predict7()
+    print(pred)
+    return pred
+
+@app.route('/manualpreds8', methods=['POST'])
+def manualpred8():
+    pred = predict8()
+    print(pred)
+    return pred
+
+@app.route('/manualpreds9', methods=['POST'])
+def manualpred9():
+    pred = predict9()
+    print(pred)
+    return pred
+
+@app.route('/manualpreds10', methods=['POST'])
+def manualpred():
+    pred = predict10()
+    print(pred)
+    return pred
+
+@app.route('/manualpreds11', methods=['POST'])
+def manualpred11():
+    pred = predict11()
+    print(pred)
+    return pred
+
+@app.route('/manualpreds12', methods=['POST'])
+def manualpred12():
+    pred = predict12()
+    print(pred)
+    return pred
+
+
 
 if __name__ == "__main__":
 	app.run(debug=True)
