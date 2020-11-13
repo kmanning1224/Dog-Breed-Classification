@@ -28,17 +28,22 @@ $(document).ready(function () {
     // Predict
     $('#btn-predict').click(function () {
         var form_data = new FormData($('#upload-file')[0]);
-        var img_data = '/plotfunc'
-        console.log(form_data)
-        // // Show loading animation
-        // $(this).hide();
-        // $('.loader').show();
-
+        // let form_data = "https://finalprojectdogsucf.s3.amazonaws.com/projectdata/american-bulldog.jpg";
+        console.log(form_data);
+        makeCall(form_data);
+    })
+    $('.box').click(function (event){
+        let url = $(event.target).attr('src');
+        console.log(url);
+        makeCall(url);
+    })
         // Make prediction by calling api /predict
+    function makeCall(path){
+        console.log(path)
         $.ajax({
             type: 'POST',
             url: '/predictresult1',
-            data: form_data,
+            data: path,
             contentType: false,
             cache: false,
             processData: false,
@@ -49,45 +54,10 @@ $(document).ready(function () {
                 $('#result').fadeIn(600);
                 $('#image-preview').show();
                 $('#result').text(' Result:  ' + data);
-                // var a_one = data[8]
-                // // console.log(a_one)
-
-                // var a_two = '{{ fulllib[1] }}'
-                // var a_three = '{{ fulllib[2] }}'
-                // var a_four = '{{ fulllib[3] }}'
-                // var one = '{{probs[0]}}'
-                // var two = '{{probs[1]}}'
-                // var three = '{{probs[2]}}'
-                // var four = '{{probs[3]}}'
-                // var p_one = Math.round(one * 100).toFixed(2);
-                // var p_two = Math.round(two * 100).toFixed(2);
-                // var p_three = Math.round(three * 100).toFixed(2);
-                // var p_four = Math.round(four * 100).toFixed(2);
-                // console.log(data)
-                
-
-        
-               
-                
-                
-        
-                // var data = [trace1];
-        
-                // var layout = {
-                // title: `Probabilities of Dog Breed`,
-                // // hovermode: 'closest',
-                // margin: {
-                //     l:75,
-                //     r:75,
-                //     t:75,
-                //     b:75,
-                //     }
-                // }
-        
                 console.log('Results: ' + data);
                 console.log('Success!');
             },
-        });
-        })
         
-    });
+        }).then(PlotDog);
+    };
+});

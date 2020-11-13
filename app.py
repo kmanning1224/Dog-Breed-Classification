@@ -102,7 +102,7 @@ def prepare_model(image_path, model):
 
 def DataResult1():
     if request.method == 'POST':
-    
+        print(request)
         filesave2 = getfile(request)
         print(filesave2)
         preds = prepare_model(filesave2, model)
@@ -133,7 +133,7 @@ def ImgResult():
 
 @app.route('/',  methods=['GET'])
 def index():
-    return render_template('index6.html')
+    return render_template('textindex.html')
 
 @app.route('/predictresult1', methods=['GET','POST'])
 def result1():
