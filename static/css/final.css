@@ -398,7 +398,13 @@ h3 {
     /* margin:35px; */
   }
 
-/* .box {
-    margin:25px; */
-/* } */
+#btn-predict {
+    background: #18914e !important;
+    color: #fff !important;
+ }
+
+#btn-predict:hover {
+    background: green !important;
+    color: #39D2B4 !important;
+}
 
