@@ -18,7 +18,7 @@ $(document).ready(function () {
                 // Get and display the result
                 $('#result12').fadeIn(600);
                 $('#result12').text(data);
-                console.log('Xception says:' + data);
+                console.log(data);
                 console.log('Xception Success!');
             },
         }).then(PlotDog);
