@@ -11,7 +11,7 @@ We chose this topic out of an interest in becoming stronger in Machine Learning 
 
 * We began by deciding on whether to work with a self trained model or pre trained and came to the conclusion that this model could provide the best results for our goal in the least amount of time. 
 
-* We used Python, Javascript, JQuery, HTML, CSS, Google Colab, Amazon S3 and Flask for this project.
+* We used Python, Javascript, Ajax, HTML, CSS, Google Colab, Amazon S3 and Flask for this project.
 
 ### Data Rendering/Predicting
 * We began by running our code within our Flask App to create the functions needed to run the Xception process. As you can see below we define our model, our file import request, and the image processing.
