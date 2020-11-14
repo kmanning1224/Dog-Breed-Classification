@@ -1,0 +1,9 @@
+/Kelsey
+/imglinks
+/plots
+*.png
+*.jpeg
+*.pdf
+*.svg
+*.jfif
+Pipfile
