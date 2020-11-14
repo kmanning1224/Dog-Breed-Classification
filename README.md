@@ -109,10 +109,10 @@ def manualpred1():
     return pred		
 ```
 * Once our Flask was somewhat established we moved forward to our Javascript queries and functions.
-  - We had three main types of Javascript files to create:
-        - An Ajax Call to get the POST request.
-        - A Plotly Function to plot the Top 4 results recieved from Xception
-        - A Ajax Call to get the POST request for static files.
+- We had three main types of Javascript files to create:
+  - An Ajax Call to get the POST request.
+  - A Plotly Function to plot the Top 4 results recieved from Xception
+  - A Ajax Call to get the POST request for static files.
 #### Predict File Import Function
 ```
 $(document).ready(function () {
