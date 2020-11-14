@@ -397,6 +397,12 @@ h3 {
     color: darkgrey;
     /* margin:35px; */
   }
+p {
+    font-weight:bold !important;
+    text-align: justify !important;
+    font-size: 20px !important;
+
+}
 
 #btn-predict {
     background: #18914e !important;
