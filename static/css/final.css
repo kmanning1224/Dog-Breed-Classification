@@ -254,6 +254,10 @@
     font-size: larger;
 }
 
+.nav-link {
+    color: black !important;
+}
+
 .navbar-brand {
     font-weight: 1000;
     font-style: italic;
@@ -414,3 +418,12 @@ p {
     color: #39D2B4 !important;
 }
 
+#rcorners {
+    border-radius: 25px;
+    border: 2px solid rgb(103, 179, 103);
+    background: white;
+    /* padding-left: 300px; 
+    padding-right: 300px;
+    width: 200px;
+    height: 150px;  */
+} 
