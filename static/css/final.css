@@ -427,3 +427,14 @@ p {
     width: 200px;
     height: 150px;  */
 } 
+
+.col-lg-8 {
+    text-align: center;
+    /* font-size: 18px; */
+    /* font-weight: bold; */
+}
+
+a {
+    font-size: 18px !important; 
+    font-weight: bold !important;
+}
