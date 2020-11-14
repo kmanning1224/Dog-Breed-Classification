@@ -393,6 +393,14 @@ h1 {
     /* margin:35px; */
   }
 
+h2 {
+    ont-family:"Arial Black", Gadget, sans-serif !important;
+    font-size: 35px !important;
+    font-weight:bold !important;
+    /* text-align:center !important; */
+    color: darkgrey;
+}  
+
 h3 {
     font-family:"Arial Black", Gadget, sans-serif !important;
     font-size: 35px !important;
@@ -433,6 +441,7 @@ p {
     /* font-size: 18px; */
     /* font-weight: bold; */
 }
+
 #barplot {
     margin-left: auto !important;
     margin-right: auto !important;
