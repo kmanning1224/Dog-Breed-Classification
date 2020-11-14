@@ -202,6 +202,9 @@ def manualpred12():
 def aboutproject():
     return render_template("about.html")
 
+@app.route('/adopt')
+def adopt():
+    return render_template("adopt.html")
 
 
 if __name__ == "__main__":
