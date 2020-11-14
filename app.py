@@ -1,15 +1,13 @@
 import os
 import numpy as np
 from werkzeug.utils import secure_filename 
-import tensorflow as tf 
 from tensorflow.keras.preprocessing import image
 from tensorflow.keras.preprocessing.image import img_to_array
 from tensorflow.keras.applications.xception import (
 	Xception, preprocess_input, decode_predictions)
 from tensorflow.keras.models import load_model
-from flask import Flask, request, redirect, url_for, jsonify, render_template, abort, Response
+from flask import Flask, request, render_template
 import glob
-import matplotlib.pyplot as plt
 import pandas as pd
 import json
 from apps.manualpred import predict1, predict2, predict3, predict4, predict5, predict6,predict7, predict8, predict9, predict10, predict11, predict12
@@ -24,7 +22,7 @@ def load_model():
 	model = Xception(weights='imagenet', include_top=True)
 print('**Keras Model Loading**')
 load_model()
-
+print('**KERAS MODEL LOADED**')
 
 
 def getfile(request):
