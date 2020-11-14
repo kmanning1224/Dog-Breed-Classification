@@ -1,5 +1,5 @@
 # Dog Breed Classification Project - Data Analytics UCF 2020
-### Project worked on by [Chika Ozodiegwu](insertgithublin) [Katherine Manning](insertgithublink) [Kelsey Wyatt](insertgithublink) and [Sofia Sotillo](insertgithublink)
+### Project worked on by [Chika Ozodiegwu](https://github.com/chikaozodiegwu) [Katherine Manning](https://github.com/kmanning1224) [Kelsey Wyatt](https://github.com/klw11j) and [Sofia Sotillo](https://github.com/SofiaAS1)
 ## Overview
 Our goal with this project was to use the pre-trained Keras model Xception to run prediction on imported images of dogs and images available to click on the webpage.
 We chose this topic out of an interest in becoming stronger in Machine Learning processes and because who doesn't love dogs?
