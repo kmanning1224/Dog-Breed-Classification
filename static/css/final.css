@@ -114,7 +114,7 @@
     margin-left: -220%; 
 }
 
-#radio13:checked ~ .first {
+/* #radio13:checked ~ .first {
     margin-left: -240%; 
 }
 
@@ -144,7 +144,7 @@
 
 #radio20:checked ~ .first {
     margin-left: -380%; 
-}
+} */
 
 /*css for automatic navigation*/
 
@@ -203,7 +203,7 @@
 #radio12:checked ~ .navigation-auto .auto-btn12{
     background: #D0F0C0;
 }
-#radio13:checked ~ .navigation-auto .auto-btn13{
+/* #radio13:checked ~ .navigation-auto .auto-btn13{
     background: #D0F0C0;
 }
 #radio14:checked ~ .navigation-auto .auto-btn14{
@@ -226,7 +226,7 @@
 }
 #radio20:checked ~ .navigation-auto .auto-btn20{
     background: #D0F0C0;
-} 
+}  */
 
 .navbar-nav ul {
     width: 100%;  /* i'm assuming full width */
