@@ -15,6 +15,8 @@ We chose this topic out of an interest in becoming stronger in Machine Learning 
 
 ### Data Rendering/Predicting
 * We began by running our code within our Flask App to create the functions needed to run the Xception process. As you can see below we define our model, our file import request, and the image processing.
+
+###
 ```
 def load_model():
 	# load the pre-trained Keras model
@@ -55,11 +57,11 @@ def ImgResult():
     print(latest_file)
     return latest_file
 ```
-
+###
 * Once these functions were complete we moved on to developing the end points
   - As you can see below, we made a seperate function for the imported files and the files served staticly on the webpage. 
   - We also created a plotting function that uses the main prediction function for file imports to plot the Top 4 results that Xception predicted.
-
+###
 ```
 @app.route('/',  methods=['GET'])
 def index():
@@ -108,6 +110,7 @@ def manualpred1():
     print(pred)
     return pred		
 ```
+###
 * Once our Flask was somewhat established we moved forward to our Javascript queries and functions.
 - We had three main types of Javascript files to create:
   - An Ajax Call to get the POST request.
@@ -253,6 +256,7 @@ d3.json(queryUrl,function(data){
 }
 
 ```
+###
 ### Predict Static Files
 ```
 $(document).ready(function () {
