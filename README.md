@@ -4,7 +4,7 @@
 Our goal with this project was to use the pre-trained Keras model Xception to run prediction on imported images of dogs and images available to click on the webpage.
 We chose this topic out of an interest in becoming stronger in Machine Learning processes and because who doesn't love dogs?
 
-**Due to the current issues that tensorflow has with large memory usage this app is not being hosted. Please clone our reposity and run app.py to see the web app locally.**
+**Due to the current issues that tensorflow has with large memory usage this app is not being hosted. Please clone our repository and run app.py to see the web app locally.**
 
 
 ## Our Process
