@@ -2,7 +2,6 @@ import os
 import numpy as np
 from werkzeug.utils import secure_filename 
 from tensorflow.keras.preprocessing import image
-from tensorflow.keras.preprocessing.image import img_to_array
 from tensorflow.keras.applications.xception import (
 	Xception, preprocess_input, decode_predictions)
 from tensorflow.keras.models import load_model
